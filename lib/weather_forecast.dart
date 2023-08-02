@@ -412,7 +412,7 @@ class _Weather_ForecastState extends State<Weather_Forecast> {
         date5 = DateFormat("yyyy-MM-dd hh:mm:ss").parse(date_time5);
 
         dt_sunrise = DateTime.fromMillisecondsSinceEpoch(sunrise);
-        dt_sunset = DateTime.fromMillisecondsSinceEpoch(sunrise);
+        dt_sunset = DateTime.fromMillisecondsSinceEpoch(sunset);
       }
     });
   }
