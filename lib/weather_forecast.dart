@@ -394,10 +394,10 @@ class _Weather_ForecastState extends State<Weather_Forecast> {
         description=(decodedData['list'][0]['weather'][0]['description']);
         speed=decodedData['list'][0]['wind']['speed'];
         first_temp=decodedData['list'][1]['main']['temp']-273;
-        sec_temp=decodedData['list'][0]['main']['temp']-273;
-        thi_temp=decodedData['list'][0]['main']['temp']-273;
-        four_temp=decodedData['list'][0]['main']['temp']-273;
-        fif_temp=decodedData['list'][0]['main']['temp']-273;
+        sec_temp=decodedData['list'][2]['main']['temp']-273;
+        thi_temp=decodedData['list'][3]['main']['temp']-273;
+        four_temp=decodedData['list'][4]['main']['temp']-273;
+        fif_temp=decodedData['list'][5]['main']['temp']-273;
 
         date_time1=decodedData['list'][1]['dt_txt'];
         date_time2=decodedData['list'][2]['dt_txt'];
