@@ -72,266 +72,268 @@ class _Weather_ForecastState extends State<Weather_Forecast> {
           Icon(Icons.more_vert,color: Colors.white,size: 25,)
         ],
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 6,right: 6,top: 28),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text('${cityname.toUpperCase()}',style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 27,
-                color: Colors.white,
-                  letterSpacing: 1.5
-              ),),
-              SizedBox(height: 5,),
-              Text('${description.toUpperCase()}',style: TextStyle(
-                  fontWeight: FontWeight.w200,
-                  fontSize: 17,
-                  color: Colors.grey.shade400,
-                  letterSpacing: 1.8
-              ),),
-              SizedBox(height: 15,),
-              Icon(Icons.cloudy_snowing,size: 69,color: Colors.white,),
-              Text('${main_temp?.toInt()}°',style: TextStyle(
-                  fontWeight: FontWeight.w200,
-                  fontSize: 88,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 6,right: 6,top: 28),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('${cityname.toUpperCase()}',style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 27,
                   color: Colors.white,
-                  letterSpacing: 1.8
-              ),),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      Text('max',style: TextStyle(
+                    letterSpacing: 1.5
+                ),),
+                SizedBox(height: 5,),
+                Text('${description.toUpperCase()}',style: TextStyle(
+                    fontWeight: FontWeight.w200,
+                    fontSize: 17,
+                    color: Colors.grey.shade400,
+                    letterSpacing: 1.8
+                ),),
+                SizedBox(height: 15,),
+                Icon(Icons.cloudy_snowing,size: 69,color: Colors.white,),
+                Text('${main_temp?.toInt()}°',style: TextStyle(
+                    fontWeight: FontWeight.w200,
+                    fontSize: 88,
+                    color: Colors.white,
+                    letterSpacing: 1.8
+                ),),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        Text('max',style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 17,
+                            color: Colors.grey.shade600,
+                        ),),
+                        SizedBox(height: 8,),
+                        Text('${max_temp?.toInt()}°',style: TextStyle(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 17,
+                            color: Colors.white,
+                        ),),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 33,
+                      child: VerticalDivider(
+                        color: Colors.grey.shade600,
+                        thickness: 1,
+                        width: 40,
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Text('min',style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 17,
                           color: Colors.grey.shade600,
-                      ),),
-                      SizedBox(height: 8,),
-                      Text('${max_temp?.toInt()}°',style: TextStyle(
+                        ),),
+                        SizedBox(height: 8,),
+                        Text('${min_temp?.toInt()}°',style: TextStyle(
                           fontWeight: FontWeight.w300,
                           fontSize: 17,
                           color: Colors.white,
-                      ),),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 33,
-                    child: VerticalDivider(
-                      color: Colors.grey.shade600,
-                      thickness: 1,
-                      width: 40,
+                        ),),
+                      ],
+                    )
+                  ],
+                ),
+                SizedBox(height: 13,),
+                Divider(
+                  color: Colors.grey.shade900,
+                  thickness: 1,
+                ),
+                SizedBox(height: 13,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Text('${DateFormat('EE').format(date1)}, ${DateFormat('hh a').format(date1)}',style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13,
+                          color: Colors.grey.shade600,
+                        ),),
+                        SizedBox(height: 5,),
+                        Icon(Icons.cloudy_snowing,size: 27,color: Colors.white,),
+                        SizedBox(height: 5,),
+                        Text('${first_temp?.toInt()}°',style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),),
+                      ],
                     ),
-                  ),
-                  Column(
-                    children: [
-                      Text('min',style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 17,
-                        color: Colors.grey.shade600,
-                      ),),
-                      SizedBox(height: 8,),
-                      Text('${min_temp?.toInt()}°',style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 17,
-                        color: Colors.white,
-                      ),),
-                    ],
-                  )
-                ],
-              ),
-              SizedBox(height: 13,),
-              Divider(
-                color: Colors.grey.shade900,
-                thickness: 1,
-              ),
-              SizedBox(height: 13,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      Text('${DateFormat('EE').format(date1)}, ${DateFormat('hh a').format(date1)}',style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13,
-                        color: Colors.grey.shade600,
-                      ),),
-                      SizedBox(height: 5,),
-                      Icon(Icons.cloudy_snowing,size: 27,color: Colors.white,),
-                      SizedBox(height: 5,),
-                      Text('${first_temp?.toInt()}°',style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 15,
-                        color: Colors.white,
-                      ),),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('${DateFormat('EE').format(date2)}, ${DateFormat('hh a').format(date2)}',style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13,
-                        color: Colors.grey.shade600,
-                      ),),
-                      SizedBox(height: 5,),
-                      Icon(Icons.cloudy_snowing,size: 27,color: Colors.white,),
-                      SizedBox(height: 5,),
-                      Text('${sec_temp?.toInt()}°',style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 15,
-                        color: Colors.white,
-                      ),),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('${DateFormat('EE').format(date3)}, ${DateFormat('hh a').format(date3)}',style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13,
-                        color: Colors.grey.shade600,
-                      ),),
-                      SizedBox(height: 5,),
-                      Icon(Icons.cloudy_snowing,size: 27,color: Colors.white,),
-                      SizedBox(height: 5,),
-                      Text('${thi_temp?.toInt()}°',style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 15,
-                        color: Colors.white,
-                      ),),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('${DateFormat('EE').format(date4)}, ${DateFormat('hh a').format(date4)}',style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13,
-                        color: Colors.grey.shade600,
-                      ),),
-                      SizedBox(height: 5,),
-                      Icon(Icons.cloudy_snowing,size: 27,color: Colors.white,),
-                      SizedBox(height: 5,),
-                      Text('${four_temp?.toInt()}°',style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 15,
-                        color: Colors.white,
-                      ),),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('${DateFormat('EE').format(date5)}, ${DateFormat('hh a').format(date5)}',style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13,
-                        color: Colors.grey.shade600,
-                      ),),
-                      SizedBox(height: 5,),
-                      Icon(Icons.cloudy_snowing,size: 27,color: Colors.white,),
-                      SizedBox(height: 5,),
-                      Text('${fif_temp?.toInt()}°',style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 15,
-                        color: Colors.white,
-                      ),),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 13,),
-              Divider(
-                color: Colors.grey.shade900,
-                thickness: 1,
-              ),
-              SizedBox(height: 13,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      Text('wind speed',style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13,
-                        color: Colors.grey.shade600,
-                      ),),
-                      SizedBox(height: 13,),
-                      Text('${speed?.toInt()} m/s',style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 15,
-                        color: Colors.white,
-                      ),),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 33,
-                    child: VerticalDivider(
-                      color: Colors.grey.shade600,
-                      thickness: 1,
+                    Column(
+                      children: [
+                        Text('${DateFormat('EE').format(date2)}, ${DateFormat('hh a').format(date2)}',style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13,
+                          color: Colors.grey.shade600,
+                        ),),
+                        SizedBox(height: 5,),
+                        Icon(Icons.cloudy_snowing,size: 27,color: Colors.white,),
+                        SizedBox(height: 5,),
+                        Text('${sec_temp?.toInt()}°',style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),),
+                      ],
                     ),
-                  ),
-                  Column(
-                    children: [
-                      Text('sunrise',style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13,
-                        color: Colors.grey.shade600,
-                      ),),
-                      SizedBox(height: 13,),
-                      Text('${DateFormat('hh:mm a').format(dt_sunrise)}',style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 15,
-                        color: Colors.white,
-                      ),),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 33,
-                    child: VerticalDivider(
-                      color: Colors.grey.shade600,
-                      thickness: 1,
+                    Column(
+                      children: [
+                        Text('${DateFormat('EE').format(date3)}, ${DateFormat('hh a').format(date3)}',style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13,
+                          color: Colors.grey.shade600,
+                        ),),
+                        SizedBox(height: 5,),
+                        Icon(Icons.cloudy_snowing,size: 27,color: Colors.white,),
+                        SizedBox(height: 5,),
+                        Text('${thi_temp?.toInt()}°',style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),),
+                      ],
                     ),
-                  ),
-                  Column(
-                    children: [
-                      Text('sunset',style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13,
-                        color: Colors.grey.shade600,
-                      ),),
-                      SizedBox(height: 13,),
-                      Text('${DateFormat('hh:mm a').format(dt_sunset)}',style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 15,
-                        color: Colors.white,
-                      ),),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 33,
-                    child: VerticalDivider(
-                      color: Colors.grey.shade600,
-                      thickness: 1,
+                    Column(
+                      children: [
+                        Text('${DateFormat('EE').format(date4)}, ${DateFormat('hh a').format(date4)}',style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13,
+                          color: Colors.grey.shade600,
+                        ),),
+                        SizedBox(height: 5,),
+                        Icon(Icons.cloudy_snowing,size: 27,color: Colors.white,),
+                        SizedBox(height: 5,),
+                        Text('${four_temp?.toInt()}°',style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),),
+                      ],
                     ),
-                  ),
-                  Column(
-                    children: [
-                      Text('humidity',style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13,
+                    Column(
+                      children: [
+                        Text('${DateFormat('EE').format(date5)}, ${DateFormat('hh a').format(date5)}',style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13,
+                          color: Colors.grey.shade600,
+                        ),),
+                        SizedBox(height: 5,),
+                        Icon(Icons.cloudy_snowing,size: 27,color: Colors.white,),
+                        SizedBox(height: 5,),
+                        Text('${fif_temp?.toInt()}°',style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(height: 13,),
+                Divider(
+                  color: Colors.grey.shade900,
+                  thickness: 1,
+                ),
+                SizedBox(height: 13,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Text('wind speed',style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13,
+                          color: Colors.grey.shade600,
+                        ),),
+                        SizedBox(height: 13,),
+                        Text('${speed?.toInt()} m/s',style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 33,
+                      child: VerticalDivider(
                         color: Colors.grey.shade600,
-                      ),),
-                      SizedBox(height: 13,),
-                      Text('${humidity}%',style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 15,
-                        color: Colors.white,
-                      ),),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 40,)
-            ],
+                        thickness: 1,
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Text('sunrise',style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13,
+                          color: Colors.grey.shade600,
+                        ),),
+                        SizedBox(height: 13,),
+                        Text('${DateFormat('hh:mm a').format(dt_sunrise)}',style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 33,
+                      child: VerticalDivider(
+                        color: Colors.grey.shade600,
+                        thickness: 1,
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Text('sunset',style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13,
+                          color: Colors.grey.shade600,
+                        ),),
+                        SizedBox(height: 13,),
+                        Text('${DateFormat('hh:mm a').format(dt_sunset)}',style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 33,
+                      child: VerticalDivider(
+                        color: Colors.grey.shade600,
+                        thickness: 1,
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Text('humidity',style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13,
+                          color: Colors.grey.shade600,
+                        ),),
+                        SizedBox(height: 13,),
+                        Text('${humidity}%',style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(height: 40,)
+              ],
+            ),
           ),
         ),
       ),
